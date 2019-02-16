@@ -97,7 +97,7 @@
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Vs2015/Install-PowerShellGet.ps1"
-            ],
+            ]
         },
         {
             "type": "powershell",
