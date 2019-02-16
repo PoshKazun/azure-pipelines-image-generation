@@ -98,11 +98,6 @@
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Vs2015/Install-PowerShellGet.ps1"
             ],
-            "pause_before": "10m"
-        },
-        {
-            "type": "windows-restart",
-            "restart_timeout": "30m"
         },
         {
             "type": "powershell",
