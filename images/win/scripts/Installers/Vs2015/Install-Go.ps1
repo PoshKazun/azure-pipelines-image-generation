@@ -64,6 +64,3 @@ setx GOROOT_1_10_X64 "$installDirectory" /M
 # Install Go 1.11.x
 $installDirectory = Install-GoVersion -goVersion '1.11.5' -addToDefaultPath $True
 setx GOROOT_1_11_X64 "$installDirectory" /M
-
-# Done
-exit 0
