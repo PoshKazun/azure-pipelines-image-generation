@@ -8,7 +8,6 @@
         "resource_group": "{{env `ARM_RESOURCE_GROUP`}}",
         "storage_account": "{{env `ARM_STORAGE_ACCOUNT`}}",
         "location": "{{env `ARM_RESOURCE_LOCATION`}}",
-        "ssh_password": "{{env `SSH_PASSWORD`}}",
         "vm_size": "Standard_DS4_v2",
 
         "image_folder": "C:\\image",
