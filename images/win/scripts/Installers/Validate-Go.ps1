@@ -35,7 +35,8 @@ else
 }
 
 # Get available versions of Go
-$goVersion1_9 = Get-GoVersion -goRootPath "C:\Go1.10.8"
+$goVersion1_9 = Get-GoVersion -goRootPath "C:\Go1.9.7"
+$goVersion1_10 = Get-GoVersion -goRootPath "C:\Go1.10.8"
 $goVersionOnPath = Get-GoVersion -goRootPath "C:\Go1.11.5"
 
 # Add details of available versions in Markdown
@@ -46,12 +47,15 @@ $Description = @"
 _Environment:_
 * GOROOT_1_9_X64: root directory of the Go $goVersion1_9 installation
 
+#### $goVersion1_10
+* GOROOT_1_10_X64: root directory of the Go $goVersion1_10 installation
+
 #### $goVersionOnPath
 
 _Environment:_
 * PATH: contains the location of go.exe version $goVersionOnPath
 * GOROOT: root directory of the Go $goVersionOnPath installation
-* GOROOT_1_10_X64: root directory of the Go $goVersionOnPath installation
+* GOROOT_1_11_X64: root directory of the Go $goVersionOnPath installation
 "@
 
 Add-SoftwareDetailsToMarkdown -SoftwareName $SoftwareName -DescriptionMarkdown $Description
