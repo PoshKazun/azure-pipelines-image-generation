@@ -140,10 +140,6 @@
             "elevated_user": "{{user `install_user`}}",
             "elevated_password": "{{user `install_password`}}"
         },
-        {
-            "type": "windows-restart",
-            "restart_timeout": "30m"
-        },
 		{
             "type": "powershell",
             "scripts":[
@@ -474,11 +470,7 @@
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-Vcpkg.ps1"
             ]
-        },
-        {
-            "type": "windows-restart",
-            "restart_timeout": "30m"
-        },   
+        },  
         {
             "type": "powershell",
             "scripts":[

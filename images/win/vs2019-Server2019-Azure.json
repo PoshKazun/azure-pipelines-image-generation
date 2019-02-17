@@ -141,6 +141,12 @@
             "elevated_user": "{{user `install_user`}}",
             "elevated_password": "{{user `install_password`}}"
         },
+		{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Install-Boost.ps1"
+            ]
+        },
         {
             "type": "powershell",
             "scripts":[
@@ -236,7 +242,7 @@
         {
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Vs2019/Install-Go.ps1"
+                "{{ template_dir }}/scripts/Installers/Install-Go.ps1"
             ]
         },
          {
@@ -438,9 +444,11 @@
             ]
         },
         {
-            "type": "windows-restart",
-            "restart_timeout": "10m"
-        },
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Install-Vcpkg.ps1"
+            ]
+        }, 
         {
             "type": "powershell",
             "scripts":[
@@ -625,6 +633,18 @@
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-CloudFoundryCli.ps1"
+            ]
+        },
+		{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Validate-Vcpkg.ps1"
+            ]
+        },
+		{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Validate-Boost.ps1"
             ]
         },
         {
