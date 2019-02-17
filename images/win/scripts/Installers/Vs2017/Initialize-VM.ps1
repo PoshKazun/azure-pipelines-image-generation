@@ -48,6 +48,7 @@ else {
 }
 
 # Install Windows .NET Features
+Write-Host "Install Windows .NET Features"
 Install-WindowsFeature -Name NET-Framework-Features -IncludeAllSubFeature
 Install-WindowsFeature -Name NET-Framework-45-Features -IncludeAllSubFeature
 Install-WindowsFeature -Name BITS -IncludeAllSubFeature
