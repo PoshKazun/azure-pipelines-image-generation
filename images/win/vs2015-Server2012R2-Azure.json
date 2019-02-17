@@ -186,6 +186,12 @@
                 "{{ template_dir }}/scripts/Installers/Vs2015/Install-Python.ps1"
             ]
         },
+	{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Install-Go.ps1"
+            ]
+        },
         {
             "type": "powershell",
             "scripts":[
@@ -207,7 +213,7 @@
         {
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Vs2015/Install-Go.ps1"
+                "{{ template_dir }}/scripts/Installers/Install-Go.ps1"
             ]
         },
         {
@@ -308,6 +314,12 @@
             "type": "windows-restart",
             "restart_timeout": "30m"
         },
+	{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Install-Boost.ps1"
+            ]
+        },  
         {
             "type": "powershell",
             "scripts":[
@@ -409,6 +421,30 @@
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-DotnetTLS.ps1"
             ]
+        },
+	{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Validate-DotnetTLS.ps1"
+            ]
+        },
+	{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Validate-Vcpkg.ps1"
+            ]
+        },
+	{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Validate-Boost.ps1"
+            ]
+        },
+        {
+            "type": "file",
+            "source": "C:\\InstalledSoftware.md",
+            "destination": "{{ template_dir }}/InstalledSoftware.md",
+            "direction": "download"
         },
         {
             "type": "powershell",
