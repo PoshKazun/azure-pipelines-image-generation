@@ -326,10 +326,6 @@
                 "{{ template_dir }}/scripts/Installers/Install-Vcpkg.ps1"
             ]
         },
-		{
-            "type": "windows-restart",
-            "restart_timeout": "30m"
-        },
         {
             "type": "powershell",
             "scripts":[
