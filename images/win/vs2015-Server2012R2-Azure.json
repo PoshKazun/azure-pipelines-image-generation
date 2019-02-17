@@ -159,6 +159,12 @@
             "elevated_user": "{{user `install_user`}}",
             "elevated_password": "{{user `install_password`}}"
         },
+		{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Install-Boost.ps1"
+            ]
+        }, 
         {
             "type": "powershell",
             "valid_exit_codes": [
@@ -186,7 +192,7 @@
                 "{{ template_dir }}/scripts/Installers/Vs2015/Install-Python.ps1"
             ]
         },
-	{
+		{
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-Go.ps1"
@@ -270,7 +276,7 @@
                 "{{ template_dir }}/scripts/Installers/Update-AndroidSDK.ps1"
             ]
         },
-	{
+		{
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-MysqlCli.ps1"
@@ -304,7 +310,7 @@
                 "{{ template_dir }}/scripts/Installers/Install-AzureModules.ps1"
             ]
         },
-	{
+		{
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Update-DotnetTLS.ps1"
@@ -314,12 +320,16 @@
             "type": "windows-restart",
             "restart_timeout": "30m"
         },
-	{
+		{
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Install-Boost.ps1"
+                "{{ template_dir }}/scripts/Installers/Install-Vcpkg.ps1"
             ]
-        },  
+        },
+		{
+            "type": "windows-restart",
+            "restart_timeout": "30m"
+        },
         {
             "type": "powershell",
             "scripts":[
@@ -416,25 +426,25 @@
                 "{{ template_dir }}/scripts/Installers/Validate-MysqlCli.ps1"
             ]
         },
-	{
+		{
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-DotnetTLS.ps1"
             ]
         },
-	{
+		{
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-DotnetTLS.ps1"
             ]
         },
-	{
+		{
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-Vcpkg.ps1"
             ]
         },
-	{
+		{
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-Boost.ps1"
