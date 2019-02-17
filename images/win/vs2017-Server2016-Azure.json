@@ -144,6 +144,12 @@
             "type": "windows-restart",
             "restart_timeout": "30m"
         },
+		{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Install-Boost.ps1"
+            ]
+        }, 
         {
             "type": "powershell",
             "valid_exit_codes": [
@@ -309,13 +315,13 @@
             "elevated_user": "{{user `install_user`}}",
             "elevated_password": "{{user `install_password`}}"
         },
-	{
+		{
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-WinAppDriver.ps1"
             ]
         },
-	{
+		{
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-WinAppDriver.ps1"
@@ -463,7 +469,7 @@
                 "{{ template_dir }}/scripts/Installers/Install-CloudFoundryCli.ps1"
             ]
         },
-	{
+		{
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-Vcpkg.ps1"
@@ -472,13 +478,7 @@
         {
             "type": "windows-restart",
             "restart_timeout": "30m"
-        },
-	{
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Install-Boost.ps1"
-            ]
-        },    
+        },   
         {
             "type": "powershell",
             "scripts":[
@@ -677,7 +677,7 @@
                 "{{ template_dir }}/scripts/Installers/Validate-Vcpkg.ps1"
             ]
         },
-	{
+		{
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-Boost.ps1"
