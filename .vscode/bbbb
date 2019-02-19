@@ -1,0 +1,38 @@
+ azure-arm: warning: Did not find command for MSVC toolset. If you have Visual Studio 2017 installed you will need to specify the full path to the command, set VS150COMNTOOLS for your installation, or build from the 'Visual Studio Command Prompt for VS 2017'.
+ azure-arm:
+ azure-arm: error: msvc initialization: parameter 'version' inconsistent
+ azure-arm: error: no value was specified in earlier initialization
+ azure-arm: error: an explicit value is specified now
+ azure-arm:
+ azure-arm:
+ azure-arm: SUCCESS: Specified value was saved.
+
+# https://sourceforge.net/projects/boost/files/boost-binaries/1.66.0/
+# https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line
+
+
+Visual Studio Versions
+old_monolithic/boost_1_38_0* - oldest windows build with: msvc-7.1, msvc-8.0, msvc-9.0
+old_monolithic/boost_1_43_0* - support of msvc-10.0
+old_monolithic/boost_1_44_0* - final supported version of msvc-7.1
+old_monolithic/boost_1_49_0* - added support for zlib and bzip2
+old_monolithic/boost_1_52_0* - support of msvc-11.0
+1.55.0/ - support of msvc-12.0
+1.59.0/ - support of msvc-14.0 (libraries built with msvc-14.0 do not support windows XP)
+1.64.0/ - support of msvc-14.1
+
+
+
+Python 2: 2.7.13
+Python 2: 2.7.13 amd64
+zlib: 1.2.8
+bzip2: 1.0.6
+
+
+Microsoft Visual Studio 2005 - msvc-8.0 - Service Pack 1
+Microsoft Visual Studio 2008 - msvc-9.0 - Service Pack 1
+Microsoft Visual Studio 2010 - msvc-10.0 - Service Pack 1
+Microsoft Visual Studio 2012 - msvc-11.0 - Update 4
+Microsoft Visual Studio 2013 - msvc-12.0 - Update 5
+Microsoft Visual Studio 2015 - msvc-14.0 - Update 3
+Microsoft Visual Studio 2017 - msvc-14.1 - VS 15.4.1
