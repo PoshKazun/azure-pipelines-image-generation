@@ -1,0 +1,24 @@
+function Invoke-Environment
+{
+    Param
+    (
+        [Parameter(Mandatory)]
+        [string]
+        $Command
+    )
+
+    & "${env:COMSPEC}" /s /c "`"$Command`" -no_logo && set" | Foreach-Object {
+        if ($_ -match '^([^=]+)=(.*)') {
+            [System.Environment]::SetEnvironmentVariable($matches[1], $matches[2])
+        }
+    }
+
+    # https://sourceforge.net/projects/boost/files/boost-binaries/1.66.0/
+    # https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line
+    # VS 2019 predefined only VS160COMNTOOLS
+    $toolset = Get-VSDefaultToolset
+    if($toolset -eq "msvc-14.1" -and -not $env:VS150COMNTOOLS) {
+        $installationPath = Get-VSInstallationPath
+        [System.Environment]::SetEnvironmentVariable("VS150COMNTOOLS", "$installationPath\Common7\Tools\")
+    }
+}
